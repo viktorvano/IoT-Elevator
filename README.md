@@ -1,5 +1,9 @@
 # IoT-Elevator
  Using STM32 and ESP8266 to control an elevator with an Android app and with natural speech via SpeechRecognitionAI.  
+   
+ Video: https://youtu.be/aTKumJoA4KU  
+ Speech Recognition AI: https://github.com/viktorvano/SpeechRecognitionAI  
+ Similar ESP8266 project (similar STM32 code): https://github.com/viktorvano/Remote-Robot
   
   
 ### Wiring Diagram  

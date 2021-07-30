@@ -44,7 +44,19 @@ void ESP_Server_Init()
 //and also here:
 void messageHandler()
 {
-	...else if(string_contains((char*)buffer, "+CWJAP:", buffer_index) != -1
+	__HAL_UART_DISABLE_IT(&huart2, UART_IT_RXNE);
+	int position = 0;
+	if((position = string_contains((char*)buffer, "elevator", buffer_index)) != -1 ||
+	   (position = string_contains((char*)buffer, "ELEVATOR", buffer_index)) != -1 ||
+	   (position = string_contains((char*)buffer, "Elevator", buffer_index)) != -1 ||
+	   (position = string_contains((char*)buffer, "vytah", buffer_index)) != -1 ||
+	   (position = string_contains((char*)buffer, "VYTAH", buffer_index)) != -1 ||
+	   (position = string_contains((char*)buffer, "Vytah", buffer_index)) != -1)
+	{
+		HAL_GPIO_WritePin(ELEVATOR_GPIO_Port, ELEVATOR_Pin, GPIO_PIN_SET);
+		HAL_Delay(1000);
+		HAL_GPIO_WritePin(ELEVATOR_GPIO_Port, ELEVATOR_Pin, GPIO_PIN_RESET);
+	}else if(string_contains((char*)buffer, "+CWJAP:", buffer_index) != -1
 			&& (string_contains((char*)buffer, "FAIL", buffer_index) != -1
 			|| string_contains((char*)buffer, "DISCONNECT", buffer_index) != -1))
 	{

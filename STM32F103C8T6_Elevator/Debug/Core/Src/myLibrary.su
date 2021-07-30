@@ -1,0 +1,8 @@
+myLibrary.c:15:6:SysTickEnable	4	static,ignoring_inline_asm
+myLibrary.c:22:6:SysTickDisable	4	static,ignoring_inline_asm
+myLibrary.c:29:6:ESP_RESET	8	static
+myLibrary.c:38:6:ESP_Server_Init	8	static
+myLibrary.c:68:6:ESP_Clear_Buffer	8	static
+myLibrary.c:74:9:string_compare	32	static
+myLibrary.c:88:5:string_contains	40	static
+myLibrary.c:100:6:messageHandler	16	static
